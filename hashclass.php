@@ -36,11 +36,12 @@ class HashClass
 
 	public function hash_count()
 	{
-		$query = "SELECT sum('sum') FROM 'tbl_algorithm'";
+		$query = "SELECT sum(`count`) as 'count' FROM tbl_algorithm";
 		$result = mysqli_query($this->connection, $query);
 		if ($result !== false) {
 			$row = mysqli_fetch_row($result);
 			$sum = $row[0];
+			return $sum;
 		}
 		else
 			return 0;
