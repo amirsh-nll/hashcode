@@ -1,9 +1,10 @@
 <?php
+	session_start();
 	require_once('hashclass.php');
 	$myhash = new HashClass();
 
 	$algorithm_count = $myhash->algorithm_count();
-	$hash_count = $myhash->hash_count();
+	$hash_count = $myhash->hash_count() / $algorithm_count;
 
 ?>
 
@@ -23,6 +24,13 @@
 				<label for="plainstring">Encrypt : <small><i>(Not Limit String Length)</i></small></label>
 				<input type="text" id="plainstring" name="plainstring" placeholder="Plain String (text)" />
 				<input type="submit" name="hash" value="Hash" />
+				<?php
+					if(isset($_SESSION['result']) && !empty($_SESSION['result']))
+					{
+						echo "<div class='result-box'><strong>Result : </strong><br />" . $_SESSION['result'] . "</div>";
+						unset($_SESSION['result']);
+					}
+				?>
 			</form>
 			<p>&nbsp;</p>
 			<form action="decrypt.php" method="post">

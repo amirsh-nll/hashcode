@@ -25,8 +25,8 @@ ul, li {
 	background-color: #fff;
 	padding: 30px;
 	box-sizing: border-box;
-	width: 80%;
-	max-width: 500px;
+	width: 100%;
+	max-width: 900px;
 	margin: 100px auto;
 	border-radius: 10px;
 }
@@ -57,6 +57,20 @@ ul, li {
 	margin-top: 50px;
 	padding: 20px;
 	font-size: 14px;
+	width: 100%;
+	display: block;
+	background-color: #27ae60;
+	color:#fff;
+	border-radius: 5px;
+	box-sizing: border-box;
+	line-height: 20px;
+}
+.form .result-box {
+	font-size: 11px;
+	line-height: 30px;
+	word-wrap: break-word;
+	margin-top: 50px;
+	padding: 20px;
 	width: 100%;
 	display: block;
 	background-color: #27ae60;
