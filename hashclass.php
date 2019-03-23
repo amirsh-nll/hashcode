@@ -58,6 +58,23 @@ class HashClass
 			return 0;
 	}
 
+	public function find_algorithm($id)
+	{
+		$id = $this->clean($id);
+
+		if(empty($id) || !is_numeric($id))
+			return -1;
+
+		$query = "SELECT * FROM `tbl_algorithm` WHERE `id` ='" . $id . "'";
+		$result = mysqli_query($this->connection, $query);
+		if ($result !== false) {
+			$result = mysqli_fetch_row($result);
+			return $result[1];
+		}
+		else
+			return 0;
+	}
+
 	public function algorithm()
 	{
 		$query = "SELECT * FROM `tbl_algorithm`";
@@ -98,6 +115,22 @@ class HashClass
 			return 0;
 	}
 
+	public function find($hashed)
+	{
+		$hashed = $this->clean($hashed);
+
+		if(empty($hashed))
+			return -1;
+
+		$query = "SELECT * FROM `tbl_data` WHERE `hash_string` ='" . $hashed . "'";
+		$result = mysqli_query($this->connection, $query);
+		if ($result !== false) {
+			$result = mysqli_fetch_row($result);
+			return $result;
+		}
+		else
+			return 0;
+	}
 
 }
 

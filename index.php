@@ -37,6 +37,16 @@
 				<label for="hashstring">Decrypt : <small><i>(Not Limit String Length)</i></small></label>
 				<input type="text" id="hashstring" name="hashstring" placeholder="Hash String" />
 				<input type="submit" name="search" value="Search" />
+				<?php
+					if(isset($_SESSION['decode']) && !empty($_SESSION['decode']))
+					{
+						if($_SESSION['decode'] === "Sorry, Not Found...!!")
+							echo "<div class='result-error-box'><strong>Result : </strong><br />" . $_SESSION['decode'] . "</div>";
+						else
+							echo "<div class='result-box'><strong>Result : </strong><br />" . $_SESSION['decode'] . "</div>";
+						unset($_SESSION['decode']);
+					}
+				?>
 			</form>
 
 			<p class="dark-alarm">⛏ Number Of Hashed String Record In Database : <strong><?php echo $hash_count; ?></strong></p>
