@@ -4,7 +4,7 @@
 	$myhash = new HashClass();
 
 	$algorithm_count = $myhash->algorithm_count();
-	$hash_count = $myhash->hash_count() / $algorithm_count;
+	$hash_count = round($myhash->hash_count() / $algorithm_count);
 
 ?>
 

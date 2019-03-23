@@ -11,7 +11,7 @@
 		foreach ($algorithms as $ag) {
 			$temp = hash($ag['name'], $_POST['plainstring']);
 			$result = $result . "* " . $ag['name'] . " : " . $temp . "<br />";
-			echo $myhash->insert($_POST['plainstring'], $temp, $ag['id']);
+			$myhash->insert($_POST['plainstring'], $temp, $ag['id']);
 		}
 
 		$_SESSION['result'] = $result;
