@@ -20,11 +20,11 @@
 				$_SESSION['decode'] = "Search String : " . $_POST['hashstring'] . "<br /> Decoded String ( " . $algorithm . " ) : " . $find[1];
 		}
 
-		header("location:index.php");
+		header("location:../index.php");
 	}
 	else
 	{
-		header("location:index.php");
+		header("location:../index.php");
 	}
 
 ?>

@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	require_once('hashclass.php');
+	require_once('inc/hashclass.php');
 	$myhash = new HashClass();
 
 	$algorithm_count = $myhash->algorithm_count();
@@ -13,14 +13,14 @@
 <head>
 	<meta charset="utf-8">
 	<title>Hash Encryption and Reverse Decryption</title>
-	<link rel="stylesheet" type="text/css" href="layout.css">
-	<link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+	<link rel="stylesheet" type="text/css" href="raw/css/layout.css">
+	<link rel="icon" type="image/png" sizes="32x32" href="raw/img/favicon.png">
 </head>
 <body>
 	<div class="container">
 		<div class="form">
 
-			<form action="encrypt.php" method="post">
+			<form action="inc/encrypt.php" method="post">
 				<label for="plainstring">Encrypt : <small><i>(Not Limit String Length)</i></small></label>
 				<input type="text" id="plainstring" name="plainstring" placeholder="Plain String (text)" />
 				<input type="submit" name="hash" value="Hash" />
@@ -33,7 +33,7 @@
 				?>
 			</form>
 			<p>&nbsp;</p>
-			<form action="decrypt.php" method="post">
+			<form action="inc/decrypt.php" method="post">
 				<label for="hashstring">Decrypt : <small><i>(Not Limit String Length)</i></small></label>
 				<input type="text" id="hashstring" name="hashstring" placeholder="Hash String" />
 				<input type="submit" name="search" value="Search" />
